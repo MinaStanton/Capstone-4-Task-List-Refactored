@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Tasks>
+
+<h1>List of Tasks</h1>
+
+<div class="row">
+    @foreach (Tasks task in Model)
+    {
+        <div class="col-md-4 table">
+            <table>
+                <tr>
+                    <th>Task Description:</th>
+                    <td>@task.TaskDescription</td>
+                </tr>
+                <tr>
+                    <th>Due Date:</th>
+                    <td>@task.DueDate</td>
+                </tr>
+                <tr>
+                    <th>Completed?</th>
+                    <td>@{
+                        if (task.Completed)
+                        {
+                            <p>Yes</p>
+                        }
+                        else
+                        {
+                            <p>No</p>
+                        }
+                            }</td>
+                </tr>
+                <tr>
+                    <td><a href="../Tasks/EditTask?id=@task.Id">Edit Task</a></td>
+                </tr>
+                <tr>
+                    <td><a href="../Tasks/DeleteTask?id=@task.Id">Delete Task</a></td>
+                </tr>
+
+            </table>
+        </div>
+    }
+</div>
+
+<a href="../Tasks/AddTask" class="btn btn-dark">Add Task</a>
