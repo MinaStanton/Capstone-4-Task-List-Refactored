@@ -1,0 +1,9 @@
+--USE IdentityTaskListDb
+
+--CREATE TABLE Tasks(
+--Id INT PRIMARY KEY IDENTITY(1,1),
+--TaskDescription NVARCHAR(250) NOT NULL,
+--DueDate DATE NOT NULL,
+--Completed BIT NOT NULL,
+--TaskOwnerId NVARCHAR(450) FOREIGN KEY REFERENCES AspNetUsers(Id)
+--);

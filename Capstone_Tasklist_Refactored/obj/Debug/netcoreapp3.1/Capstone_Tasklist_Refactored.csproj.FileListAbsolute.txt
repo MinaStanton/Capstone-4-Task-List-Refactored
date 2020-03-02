@@ -155,3 +155,6 @@ C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Ca
 C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Index.cshtml.g.cs
 C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\AddTask.cshtml.g.cs
 C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\EditTask.cshtml.g.cs
+C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\SortTask.cshtml.g.cs
+C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\FindTask.cshtml.g.cs
+C:\Users\stant\Documents\GC_CSHARP_BOOTCAMP\Labs\Capstone_Tasklist_Refactored\Capstone_Tasklist_Refactored\obj\Debug\netcoreapp3.1\Razor\Views\Tasks\Error.cshtml.g.cs

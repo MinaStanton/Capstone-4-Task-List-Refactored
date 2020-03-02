@@ -108,8 +108,67 @@ namespace Capstone_Tasklist_Refactored.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult SortTask()
+        {
+
+            return View();
+
+        }
+        [HttpPost]
+        public IActionResult SortTask(int selection)
+        {
+
+            string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            List<Tasks> thisUsersTasks = _context.Tasks.Where(x => x.TaskOwnerId == id).ToList();
+
+            if (selection == 1)
+            {
+                List<Tasks> sortedList = thisUsersTasks.OrderBy(task => task.DueDate).ToList();
+                return View("Index", sortedList);
+            }
+            else if (selection == 2)
+            {
+                List<Tasks> sortedList = thisUsersTasks.OrderBy(task => task.Completed).Reverse().ToList();
+                return View("Index", sortedList);
+            }
+
+            return RedirectToAction("Index");
 
         }
 
+        [HttpGet]
+        public IActionResult FindTask()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult FindTask(string word)
+        {
+            string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            List<Tasks> thisUsersTasks = _context.Tasks.Where(x => x.TaskOwnerId == id).ToList();
+
+            if(word != null)
+            {
+                List<Tasks> found = thisUsersTasks.Where(x => x.TaskDescription.Contains(word)).ToList();
+                return View("Index",found);
+            }
+            else if(word == null)
+            {
+                return RedirectToAction("Error");
+                
+            }
+
+           return RedirectToAction("Index");
+        }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }

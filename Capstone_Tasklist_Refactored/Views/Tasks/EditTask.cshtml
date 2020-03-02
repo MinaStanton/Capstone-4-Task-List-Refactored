@@ -8,7 +8,7 @@
 <form action="../Tasks/EditTask" method="post">
     <input type="hidden" name="Id" value="@Model.Id" />
    Task Description: <input type="text" name="TaskDescription" value="@Model.TaskDescription" />
-    Date due: <input type="date" name="DueDate" value="@Model.DueDate" required/>
+    Date due: <input type="date" name="DueDate" value="@Model.DueDate.ToString("yyyy-MM-dd")" />
     Completed: <input type="checkbox" name="Completed" value="true" />
     Not Completed: <input type="checkbox" name="Completed" value="false" />
                

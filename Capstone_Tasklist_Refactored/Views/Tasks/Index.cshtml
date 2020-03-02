@@ -7,42 +7,47 @@
 
 <h1>List of Tasks</h1>
 
-<div class="row">
+
+
+    <a href="../Tasks/AddTask" class="btn btn-dark">Add Task</a>
+
+    <a href="../Tasks/SortTask" class="btn btn-dark">Sort Task</a>
+
+    <a href="../Tasks/FindTask" class="btn btn-dark">Search for a Task</a>
+
+<table class="table col-md-9">
+    <tr>
+        <th>Task Description</th>
+        <th>Due Date</th>
+        <th>Completed?</th>
+    </tr>
     @foreach (Tasks task in Model)
     {
-        <div class="col-md-4 table">
-            <table>
-                <tr>
-                    <th>Task Description:</th>
-                    <td>@task.TaskDescription</td>
-                </tr>
-                <tr>
-                    <th>Due Date:</th>
-                    <td>@task.DueDate</td>
-                </tr>
-                <tr>
-                    <th>Completed?</th>
-                    <td>@{
-                        if (task.Completed)
-                        {
-                            <p>Yes</p>
-                        }
-                        else
-                        {
-                            <p>No</p>
-                        }
-                            }</td>
-                </tr>
-                <tr>
-                    <td><a href="../Tasks/EditTask?id=@task.Id">Edit Task</a></td>
-                </tr>
-                <tr>
-                    <td><a href="../Tasks/DeleteTask?id=@task.Id">Delete Task</a></td>
-                </tr>
+        <tr>
+            <td> @task.TaskDescription</td>
+            <td> @task.DueDate.ToString("yyyy-MM-dd")</td>
+            <td>
+                @{
+                    if (task.Completed)
+                    {
+                        <p>Yes</p>
+                    }
+                    else
+                    {
+                        <p>No</p>
+                    }
+                }
+            </td>
+            <td><a href="../Tasks/EditTask?id=@task.Id">Edit Task</a></td>
+            <td><a href="../Tasks/DeleteTask?id=@task.Id">Delete Task</a></td>
+        </tr>
 
-            </table>
-        </div>
+
     }
-</div>
 
-<a href="../Tasks/AddTask" class="btn btn-dark">Add Task</a>
+
+</table>
+
+
+
+
